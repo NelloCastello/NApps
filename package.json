@@ -1,0 +1,29 @@
+{
+  "name": "napps",
+  "version": "1.0.0",
+  "description": "Site for applications from n company",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NelloCastello/NApps.git"
+  },
+  "author": "Nello Castello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NelloCastello/NApps/issues"
+  },
+  "homepage": "https://github.com/NelloCastello/NApps#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-ahex": "^1.0.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.38.0"
+  }
+}

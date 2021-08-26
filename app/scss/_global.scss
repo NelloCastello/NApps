@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background: #2A2A3B;
+    color: #fff;
+    line-height: 1.25;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+img {
+    height: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+}

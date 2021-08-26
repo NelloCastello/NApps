@@ -1,0 +1,135 @@
+<!-- 
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+ -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <title>NApps - приложения, созданые компанией N</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+
+    <header class="header">
+        <div class="container header-container">
+            <a class="header__home-link" href="#">
+                <img class="header__logo" src="images/svg/nsoft-logo.svg" alt="">
+                <div class="header__site-descr">
+                    <h1 class="header__site-head">NAPPS</h1>
+                    <h2 class="header__site-subhead">ПРИЛОЖЕНИЯ, СОЗДАНЫЕ КОМПАНИЕЙ N</h2>
+                </div>
+            </a>
+            <ul class="header__menu-list">
+                <li class="header__menu-item">
+                    <a class="header__menu-item-link" href="#">ССЫЛКА</a>
+                </li>
+            </ul>
+            <div class="header__account-manip">
+                <a class="header__auth-link" href="#">ВХОД</a>
+                <a class="header__reg-link" href="#">РЕГИСТРАЦИЯ</a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="wrapper">
+        <div class="container wrapper-container">
+
+
+            <main class="content">
+                <h1 class="wrapper__head content__page-head">НОВОСТИ</h1>
+                <section class="content__releases">
+                    <article class="content__release">
+                        <a class="content__release-img-link" href="#">
+                            <img class="content__release-img" src="images/jpg/content-section__example.jpg" alt="">
+                        </a>
+                        <div class="content__release-details">
+                            <h1 class="content__release-head">
+                                <a class="content__release-head-link" href="#">Какая-та новость</a>
+                            </h1>
+                            <p class="content__release-descr">
+                                Давно выяснено, что при оценке дизайна и композиции читаемый текст 
+                                мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее 
+                                стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое 
+                                не получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." 
+                                Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по 
+                                умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц 
+                                всё ещё дожидаются своего настоящего рождения. За прошедшие годы текст Lorem Ipsum получил 
+                                много версий.
+                            </p>
+                            <div class="content__release-details-wrapper"></div>
+                            <div class="content__release-meta">
+                                <div class="content__release-date">21.12.2012</div>
+                                <a class="content__release-category-box" href="#">
+                                    <img class="content__release-category-icon" src="images/svg/other-icon.svg" alt="">
+                                    <div class="content__release-category">КАТЕГОРИЯ</div>
+                                </a>
+                                <div class="content__release-meta-wrapper"></div>
+                                <a class="content__release-more-btn" href="#">ПОДРОБНЕЕ</a>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                <nav class="content__paginator">
+                    <a class="content__paginator-link content__paginator-link--hidden" href="#">В НАЧАЛО</a>
+                    <a class="content__paginator-link content__paginator-link--hidden" href="#">НАЗАД</a>
+                    <a class="content__paginator-link" href="#">ВПЕРЁД</a>
+                    <a class="content__paginator-link" href="#">В КОНЕЦ</a>
+                </nav>
+            </main>
+
+
+            <nav class="nav">
+                <section class="nav__section">
+                    <h1 class="wrapper__head nav__section-head">КАТЕГОРИИ</h1>
+                    <ul class="nav__goto-list">
+                        <li class="nav__goto-item">
+                            <a class="nav__goto-item-link" href="#">
+                                <img class="nav__goto-category-icon" src="images/svg/other-icon.svg">
+                                <div class="nav__goto-item-name">КАТЕГОРИЯ</div>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="nav__section">
+                    <h1 class="wrapper__head nav__section-head">НАВИГАЦИЯ</h1>
+                    <ul class="nav__goto-list">
+                        <li class="nav__goto-item">
+                            <a class="nav__goto-item-link" href="#">
+                                <div class="nav__goto-item-name">ТЕХ. ПОДДЕРЖКА</div>
+                            </a>
+                        </li>
+                        <li class="nav__goto-item">
+                            <a class="nav__goto-item-link" href="#">
+                                <div class="nav__goto-item-name">БЕТА-ТЕСТИРОВАНИЕ</div>
+                            </a>
+                        </li>
+                        <li class="nav__goto-item nav__goto-item--use">
+                            <a class="nav__goto-item-link" href="#">
+                                <div class="nav__goto-item-name">НОВОСТИ</div>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="nav__section">
+                    <h1 class="wrapper__head nav__section-head">РЕКЛАМА</h1>
+                </section>
+                <div class="nav__wrapper"></div>
+                <footer class="footer">
+                    <p class="footer__about-rights">Что-то там о правах сайта</p>
+                </footer>
+            </nav>
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+.content {
+    &__releases {
+        margin-bottom: 20px;
+    }
+
+    &__release {
+        display: flex;
+        background: #242432;
+    }
+
+    &__release + &__release {
+        margin-top: 20px;
+    }
+
+    &__release-img-link {
+        display: flex;
+    }
+
+    &__release-img {
+        width: 370px;
+    }
+
+    &__release-details {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    &__release-head {
+        font-weight: bold;
+        font-size: 16px;
+        color: #F56D6D;
+        margin-bottom: 10px;
+    }
+
+    &__release-descr {
+        font-size: 11px;
+        color: #A2A2A2;
+        margin-bottom: 10px;
+    }
+
+    &__release-details-wrapper {
+        flex: 1;
+    }
+
+    &__release-meta {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+    }
+
+    &__release-date {
+        margin-right: 10px;
+    }
+
+    &__release-category-box {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__release-category-icon {
+        height: 16px;
+        margin-right: 5px;
+    }
+
+    &__release-meta-wrapper {
+        flex: 1;
+    }
+
+    &__release-more-btn {
+        padding: 5px 10px;
+        background: #3E3E4F;
+    }
+
+    &__paginator {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    &__paginator-link {
+        flex: 1;
+        text-align: center;
+        padding: 10px 15px;
+        background: #3E3E4F;
+        font-weight: bold;
+        font-size: 13px;
+        color: #E3E3E3;
+
+        &--hidden {
+            display: none;
+        }
+    }
+}
