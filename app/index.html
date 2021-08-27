@@ -19,7 +19,7 @@ font-family: 'Roboto Condensed', sans-serif;
 
 
     <header class="header">
-        <div class="container header-container">
+        <div class="header__container container">
             <a class="header__home-link" href="#">
                 <img class="header__logo" src="images/svg/nsoft-logo.svg" alt="">
                 <div class="header__site-descr">
@@ -29,25 +29,26 @@ font-family: 'Roboto Condensed', sans-serif;
             </a>
             <ul class="header__menu-list">
                 <li class="header__menu-item">
-                    <a class="header__menu-item-link" href="#">ССЫЛКА</a>
+                    <a class="header__menu-link" href="#">ССЫЛКА</a>
                 </li>
             </ul>
-            <div class="header__account-manip">
-                <a class="header__auth-link" href="#">ВХОД</a>
-                <a class="header__reg-link" href="#">РЕГИСТРАЦИЯ</a>
+            <div class="header__login-inner">
+                <a class="header__auth-link header__login-link" href="#">ВХОД</a>
+                <a class="header__reg-link header__login-link" href="#">РЕГИСТРАЦИЯ</a>
             </div>
         </div>
     </header>
 
 
     <div class="wrapper">
-        <div class="container wrapper-container">
+        <div class="container wrapper__container">
 
 
             <main class="content">
-                <h1 class="wrapper__head content__page-head">НОВОСТИ</h1>
-                <section class="content__releases">
-                    <article class="content__release">
+                <h1 class="wrapper__head content__head">НОВОСТИ</h1>
+
+                <section class="content__release-section">
+                    <article class="content__release-article">
                         <a class="content__release-img-link" href="#">
                             <img class="content__release-img" src="images/jpg/content-section__example.jpg" alt="">
                         </a>
@@ -68,7 +69,7 @@ font-family: 'Roboto Condensed', sans-serif;
                             <div class="content__release-details-wrapper"></div>
                             <div class="content__release-meta">
                                 <div class="content__release-date">21.12.2012</div>
-                                <a class="content__release-category-box" href="#">
+                                <a class="content__release-category-inner" href="#">
                                     <img class="content__release-category-icon" src="images/svg/other-icon.svg" alt="">
                                     <div class="content__release-category">КАТЕГОРИЯ</div>
                                 </a>
@@ -78,6 +79,7 @@ font-family: 'Roboto Condensed', sans-serif;
                         </div>
                     </article>
                 </section>
+
                 <nav class="content__paginator">
                     <a class="content__paginator-link content__paginator-link--hidden" href="#">В НАЧАЛО</a>
                     <a class="content__paginator-link content__paginator-link--hidden" href="#">НАЗАД</a>
