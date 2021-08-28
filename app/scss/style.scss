@@ -1,6 +1,7 @@
+@import 'anim';
 @import 'global';
 
-@import 'news';
+@import 'releases/releases';
 
 .header {
     background: #47475A;
@@ -47,17 +48,33 @@
         gap: 10px;
     }
 
+    &__menu-item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__menu-item::after {
+        content: '';
+        position: absolute;
+        height: 5px;
+        background: #F56D6D;
+        width: 0%;
+        bottom: -5px;
+    }
+
+    &__menu-item:hover::after {
+        width: 100%;
+    }
+
     &__login-inner {
         display: flex;
         align-items: center;
+        gap: 10px;
     }
 
     &__login-link {
         font-size: 14px;
-    }
-
-    &__auth-link {
-        margin-right: 10px;
     }
 
     &__reg-link {
@@ -121,8 +138,24 @@
     }
 
     &__goto-item {
+        position: relative;
         background: #54546B;
         display: flex;
+    }
+
+    &__goto-item::before {
+        z-index: 0;
+        position: absolute;
+        content: '';
+        background: #3E3E4F;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 0%;
+    }
+
+    &__goto-item:hover::before {
+        width: 100%;
     }
 
     &__goto-item--use {
@@ -130,6 +163,7 @@
     }
 
     &__goto-item-link {
+        z-index: 0;
         flex: 1;
         display: flex;
         align-items: center;
@@ -176,5 +210,98 @@
     &__section {
         display: flex;
         flex-direction: column;
+    }
+}
+
+
+.login {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0000008C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__pop-up {
+        width: 513px;
+        background: #353551;
+        box-shadow: 0px 0px 20px 0px #000000D9;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        clip: auto;
+        overflow: hidden;
+    }
+
+    &__header-decor {
+        height: 10px;
+        background: #F56D6D;
+    }
+
+    &__form {
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__head {
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        padding: 15px;
+        background: #242432;
+        border-radius: 7px;
+        border: none;
+        outline: none;
+        margin-bottom: 20px;
+        font-size: 15px;
+        color: #C6C6C6;
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    &__input::placeholder {
+        color: #C6C6C680;
+    }
+
+    &__btn-inner {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__btn {
+        flex: 1;
+        padding: 10px 15px;
+        background: #F56D6D;
+        border-radius: 7px;
+        font-weight: bold;
+        font-size: 17px;
+        color: #ECECEC;
+        border: none;
+
+        &--hidden {
+            display: none;
+        }
+    }
+}
+
+.register {
+    &--hidden {
+        display: none;
+    }
+}
+
+.auth {
+    &--hidden {
+        display: none;
     }
 }

@@ -1,0 +1,19 @@
+.header__menu-item::after {
+    transition: width 400ms;
+}
+
+.nav__goto-item::before {
+    transition: width 400ms;
+}
+
+.content__release-head::after {
+    transition: width 400ms;
+}
+
+.content__release-more-btn {
+    transition: background 400ms;
+}
+
+.content__paginator-link {
+    transition: background 400ms;
+}

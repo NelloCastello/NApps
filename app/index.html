@@ -133,5 +133,46 @@ font-family: 'Roboto Condensed', sans-serif;
 
         </div>
     </div>
+
+
+    <div class="register register--hidden login">
+        <div class="login__pop-up">
+        <div class="login__header-decor"></div>
+            <form class="login__form" action="" method="post">
+                <h1 class="login__head">РЕГИСТРАЦИЯ</h1>
+
+                <input type="text" class="login__input" id="register__nickname-input" placeholder="Ваш будущий ник">
+                <input type="email" class="login__input--hidden login__input" id="register__email-input" placeholder="Ваш действующий email">
+                <input type="number" class="login__input--hidden login__input" id="register__code-input" placeholder="Введите код, отправленый на ваш введенный email">
+                <input type="password" class="login__input--hidden login__input" id="register__passwd1-input" placeholder="Ваш новый пароль">
+                <input type="password" class="login__input--hidden login__input" id="register__passwd2-input" placeholder="Подтвердите пароль">
+
+                <div class="login__btn-inner">
+                    <button class="login__btn login__btn--hidden" id="register__prev-btn" type="button">Назад</button>
+                    <button class="login__btn" id="register__next-btn" type="button">Далее</button>
+                    <button class="login__btn login__btn--hidden" id="register__done-btn" type="submit">Закончить регистрацию</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="auth auth--hidden login">
+        <div class="login__pop-up">
+        <div class="login__header-decor"></div>
+            <form class="login__form" action="" method="post">
+                <h1 class="login__head">ВХОД</h1>
+
+                <input type="text" class="login__input" id="auth__nickname-input" placeholder="Введите ник или email">
+                <input type="password" class="login__input--hidden login__input" id="auth__passwd1-input" placeholder="Ваш новый пароль">
+
+                <div class="login__btn-inner">
+                    <button class="login__btn login__btn--hidden" id="auth__prev-btn" type="button">Назад</button>
+                    <button class="login__btn" id="auth__next-btn" type="button">Далее</button>
+                    <button class="login__btn login__btn--hidden" id="auth__done-btn" type="submit">Войти</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
