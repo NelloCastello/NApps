@@ -5,6 +5,10 @@ const concat        = require('gulp-concat');
 const autoprefixer  = require('gulp-autoprefixer');
 const ahex          = require('gulp-ahex');
 const imagemin      = require('gulp-imagemin');
+const del           = require('del');
+const htmlmin       = require('gulp-htmlmin');
+const typescript    = require('gulp-typescript');
+const uglify        = require('gulp-uglify-es').default;
 
 function browsersync() {
     browserSync.init({
@@ -45,18 +49,49 @@ function styles() {
         .pipe(browserSync.stream());
 }
 
+function scripts() {
+    return src('app/ts/**/*.ts')
+        .pipe(typescript({
+            noImplicitAny: true,
+            removeComments: true,
+
+            outFile: 'script.min.js'
+        }))
+        .pipe(uglify())
+        .pipe(dest('app/js'))
+        .pipe(browserSync.stream());
+}
+
 function watching() {
     watch(['app/scss/**/*.scss'], styles);
+    watch(['app/ts/**/*.ts'], scripts);
     watch(['app/*.html']).on('change', browserSync.reload);
 }
 
-function build() {
-    
+function moveToDist() {
+    return src([
+        'app/css/style.min.css',
+        'app/fonts/**/*',
+        'app/js/script.min.js'
+    ], {base: 'app'})
+        .pipe(dest('dist'));
+}
+
+function html() {
+    return src('app/*.html', {base: 'app'})
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true
+        }))
+        .pipe(dest('dist'));
+}
+
+function cleanDist() {
+    return del('dist');
 }
 
 
-exports.browsersync     = browsersync;
-exports.watching        = watching;
-exports.styles          = styles;
 
-exports.default         = parallel(browsersync, watching);
+exports.default         = parallel(scripts, styles, browsersync, watching);
+exports.build           = series(cleanDist, moveToDist, html, images);
+exports.cleanDist       = cleanDist;
