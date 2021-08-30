@@ -7,8 +7,15 @@ const ahex          = require('gulp-ahex');
 const imagemin      = require('gulp-imagemin');
 const del           = require('del');
 const htmlmin       = require('gulp-htmlmin');
-const typescript    = require('gulp-typescript');
 const uglify        = require('gulp-uglify-es').default;
+const babel         = require('gulp-babel');
+const ts            = require('gulp-typescript');
+const browserify    = require('gulp-browserify');
+const changed       = require('gulp-changed');
+
+const tsProject = ts.createProject('tsconfig.json');
+
+
 
 function browsersync() {
     browserSync.init({
@@ -40,26 +47,23 @@ function styles() {
             outputStyle: 'compressed'
         }).on('error', scss.logError))
         .pipe(ahex())
-        .pipe(autoprefixer({
-            overrideBrowserslist: ['last 10 versions'],
-            grid: true
-        }))
-        .pipe(concat('style.min.css'))
+        .pipe(concat('style.css'))
         .pipe(dest('app/css'))
         .pipe(browserSync.stream());
 }
 
 function scripts() {
-    return src('app/ts/**/*.ts')
-        .pipe(typescript({
-            noImplicitAny: true,
-            removeComments: true,
+    const tsResult = tsProject
+        .src()
+        .pipe(tsProject());
 
-            outFile: 'script.min.js'
+    return tsResult.js
+        .pipe(babel({
+            presets: ['@babel/preset-env']
         }))
-        .pipe(uglify())
-        .pipe(dest('app/js'))
-        .pipe(browserSync.stream());
+        .pipe(browserify())
+        .pipe(concat("script.js"))
+        .pipe(dest('app/js'));
 }
 
 function watching() {
@@ -90,8 +94,8 @@ function cleanDist() {
     return del('dist');
 }
 
+exports.scripts         = scripts;
 
-
-exports.default         = parallel(scripts, styles, browsersync, watching);
+exports.default         = parallel(scripts, browsersync, watching);
 exports.build           = series(cleanDist, moveToDist, html, images);
 exports.cleanDist       = cleanDist;

@@ -1,0 +1,12 @@
+{
+    "include": [
+        "app/ts/**/*.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "ES6",
+        "removeComments": true,
+        "types": ["node", "jquery"],
+        "isolatedModules": true
+    }
+}

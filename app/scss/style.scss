@@ -225,6 +225,16 @@
     align-items: center;
     justify-content: center;
 
+    &__close-btn {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        height: 29px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
     &__pop-up {
         width: 513px;
         background: #353551;
