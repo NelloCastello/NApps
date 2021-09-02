@@ -81,7 +81,7 @@ let getRegisterElemActive = function(active: number): RegisterInterface {
 getRegisterElemActive(registerInputActive).HTMLElemBtn.removeClass('login__btn--hidden');
 getRegisterElemActive(registerInputActive).HTMLElem.removeClass('login__input--hidden');
 
-$('.login__btn:not(#js-register__prevBtn)').on('click', function() {
+$('.register .login__btn:not(#js-register__prevBtn)').on('click', function() {
     registerInputActive++;
 
     console.log(registerInputActive);
@@ -115,4 +115,86 @@ registerBtnPrevElem.on('click', function() {
 
     getRegisterElemActive(registerInputActive).HTMLElemBtn.removeClass('login__btn--hidden');
     getRegisterElemActive(registerInputActive).HTMLElem.removeClass('login__input--hidden');
+});
+
+
+
+// Авторизация
+
+interface RegisterInterface {
+    name: string;
+    HTMLElem: JQuery;
+    HTMLElemBtn: JQuery;
+    HTMLElemBtnPrev: boolean;
+};
+
+let authBtnPrevElem: JQuery = $('#js-auth__prevBtn');
+
+let authList: RegisterInterface[] = [
+    {
+        name: "nickname",
+        HTMLElem: $('#js-auth__nicknameInput'),
+        HTMLElemBtn: $('#js-auth__nextBtn'),
+        HTMLElemBtnPrev: false
+    },
+    {
+        name: "passwd",
+        HTMLElem: $('#js-auth__passwdInput'),
+        HTMLElemBtn: $('#js-auth__doneBtn'),
+        HTMLElemBtnPrev: true
+    }
+];
+
+let authInputActive: number = 0;
+
+let getAuthElemActive = function(active: number): RegisterInterface {
+    let result: RegisterInterface;
+
+    authList.forEach(function(item: RegisterInterface) {
+        if (item.name === authList[active].name) {
+            result = item;
+            return;
+        }
+    });
+
+    return result;
+};
+
+getAuthElemActive(authInputActive).HTMLElemBtn.removeClass('login__btn--hidden');
+getAuthElemActive(authInputActive).HTMLElem.removeClass('login__input--hidden');
+
+$('.auth .login__btn:not(#js-auth__prevBtn)').on('click', function() {
+    authInputActive++;
+
+    console.log(authInputActive);
+
+    if(getAuthElemActive(authInputActive).HTMLElemBtnPrev === true) {
+        authBtnPrevElem.removeClass('login__btn--hidden');
+    } else {
+        authBtnPrevElem.addClass('login__btn--hidden');
+    }
+
+    getAuthElemActive(authInputActive-1).HTMLElemBtn.addClass('login__btn--hidden');
+    getAuthElemActive(authInputActive-1).HTMLElem.addClass('login__input--hidden');
+
+    getAuthElemActive(authInputActive).HTMLElemBtn.removeClass('login__btn--hidden');
+    getAuthElemActive(authInputActive).HTMLElem.removeClass('login__input--hidden');
+});
+
+authBtnPrevElem.on('click', function() {
+    authInputActive--;
+
+    console.log(authInputActive);
+
+    if(getAuthElemActive(authInputActive).HTMLElemBtnPrev === true) {
+        authBtnPrevElem.removeClass('login__btn--hidden');
+    } else {
+        authBtnPrevElem.addClass('login__btn--hidden');
+    }
+
+    getAuthElemActive(authInputActive+1).HTMLElemBtn.addClass('login__btn--hidden');
+    getAuthElemActive(authInputActive+1).HTMLElem.addClass('login__input--hidden');
+
+    getAuthElemActive(authInputActive).HTMLElemBtn.removeClass('login__btn--hidden');
+    getAuthElemActive(authInputActive).HTMLElem.removeClass('login__input--hidden');
 });
