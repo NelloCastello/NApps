@@ -53,17 +53,18 @@ function styles() {
 }
 
 function scripts() {
-    const tsResult = tsProject
-        .src()
-        .pipe(tsProject());
-
-    return tsResult.js
+    return src([
+        "app/ts/**/*.ts"
+    ])
+        .pipe(tsProject())
         .pipe(babel({
             presets: ['@babel/preset-env']
         }))
-        .pipe(browserify())
-        .pipe(concat("script.js"))
-        .pipe(dest('app/js'));
+        .pipe(browserify({
+        }))
+        .pipe(concat('script.js'))
+        .pipe(dest('app/js'))
+        .pipe(browserSync.stream());
 }
 
 function watching() {
